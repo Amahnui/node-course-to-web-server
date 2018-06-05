@@ -1,6 +1,7 @@
  const express = require('express');
  const hbs = require('hbs');//handle bars for templating
  const fs = require('fs');
+ const port = process.env.PORT || 3000;
 
 
 var app = express();
@@ -56,6 +57,6 @@ app.get('/bad', (req, res) => {
     errorMessage: 'Opps something went wrong'
   });
 });
-app.listen(3000, () =>{
+app.listen(port, () =>{
   console.log('server is running on port 3000');
 });
