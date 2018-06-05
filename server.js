@@ -13,6 +13,7 @@ app.set('veiw engine', 'hbs');
 app.use((req, res, next) =>{
   var now = new Date().toString();
   var log =(`${now}: ${req.method} ${req.url}`);
+
   console.log(log);
   fs.appendFile('server.log', log + '\n', (err) => {
     if (err) {
@@ -58,5 +59,5 @@ app.get('/bad', (req, res) => {
   });
 });
 app.listen(port, () =>{
-  console.log('server is running on port 3000');
+  console.log(`server is running on port ${port}`);
 });
